@@ -6,6 +6,7 @@ function login(event) {
 
     fetch('https://dev.klinikdrsanderb-emcu.com/api/v1/registrationpatients/login', {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken

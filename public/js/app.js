@@ -1,17 +1,18 @@
 function login(event) {
     event.preventDefault();
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-    const username = document.getElementById('username').value;
+    const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
     fetch('/loginaction', {
         method: 'POST',
+        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken
         },
         body: JSON.stringify({
-            username: username,
+            email: email,
             password: password
         })
     })
@@ -29,7 +30,6 @@ function logout() {
   window.location.href = "/login";
 }
 
-// proteksi dashboard
 if (window.location.pathname.includes("dashboard")) {
   if (!localStorage.getItem("login")) {
     window.location.href = "/login";

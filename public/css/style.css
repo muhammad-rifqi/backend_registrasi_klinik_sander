@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  background: linear-gradient(135deg, #1f2937, #ffffff);
   color: white;
 }
 
@@ -14,7 +14,7 @@ body {
 }
 
 .login-box {
-  background: rgba(255,255,255,0.1);
+  background: #1f2937;
   padding: 40px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
@@ -24,7 +24,7 @@ body {
 }
 
 .login-box input {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   margin: 10px 0;
   border: none;
@@ -35,49 +35,15 @@ body {
   width: 100%;
   padding: 10px;
   border: none;
-  background: #00c6ff;
+  background: #006699;
   color: white;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 10px;
 }
 
 .login-box button:hover {
   background: #0072ff;
 }
 
-/* DASHBOARD */
-.sidebar {
-  width: 200px;
-  height: 100vh;
-  position: fixed;
-  background: rgba(0,0,0,0.3);
-  padding: 20px;
-}
-
-.sidebar a {
-  display: block;
-  color: white;
-  text-decoration: none;
-  margin: 15px 0;
-}
-
-.main {
-  margin-left: 220px;
-  padding: 50px;
-}
-
-.card-container {
-  display: flex;
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.card {
-  flex: 1;
-  padding: 20px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
-  backdrop-filter: blur(8px);
-  text-align: center;
-}

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class LoginController extends Controller
 {
@@ -20,17 +21,31 @@ class LoginController extends Controller
      */
     public function loginaction(Request $request)
     {
-         $credentials = $request->only('email', 'password');
+        // $credentials = $request->only('email', 'password');
+        // if (Auth::attempt($credentials)) {
+        //     $request->session()->regenerate();
+        //     return response()->json([
+        //         'success' => true,
+        //         'user' => Auth::user()
+        //     ]);
+        // }
 
-        if (Auth::attempt($credentials)) {
+        $email = $request->email;
+        $password = $request->password;
 
+        if ($email === 'admin.mcu@dayamedika.com' && $password === '123456') {
             $request->session()->regenerate();
-
+            cookie('email', $email, 60);
             return response()->json([
                 'success' => true,
-                'user' => Auth::user()
-            ]);
+                'message' => 'Login berhasil',
+                'user' => [
+                    'email' => $email,
+                    'password' => Hash::make($request->password)
+                ]
+            ])->cookie('email', $email, 60);
         }
+
 
         return response()->json([
             'success' => false,

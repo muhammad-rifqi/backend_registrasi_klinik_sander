@@ -3,30 +3,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
 </head>
 <body>
 
+<!-- SIDEBAR -->
 <div class="sidebar">
-  <h2>MyApp</h2>
-  <a href="#">🏠 Dashboard</a>
-  <a href="#">📊 Analytics</a>
-  <a href="#">⚙️ Settings</a>
-  <a href="#" onclick="logout()">🚪 Logout</a>
+    <div class="logo">
+        MyAdmin
+    </div>
+
+    <ul class="menu">
+        <li class="active"><a href="#">🏠 Dashboard</a></li>
+        <li><a href="#">👥 Users</a></li>
+        <li><a href="#">📊 Analytics</a></li>
+        <li><a href="#">📦 Produk</a></li>
+        <li><a href="#">⚙️ Settings</a></li>
+        <li><a href="#">🚪 Logout</a></li>
+    </ul>
 </div>
 
+<!-- MAIN -->
 <div class="main">
-  <h1>Dashboard</h1>
-  <p>Selamat datang di dashboard elegan Anda.</p>
 
-  <div class="card-container">
-    <div class="card">📈 Statistik</div>
-    <div class="card">👥 User</div>
-    <div class="card">💰 Pendapatan</div>
-  </div>
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <h2>Dashboard</h2>
+
+        <div class="profile">
+            Admin
+        </div>
+    </div>
+
+    <!-- CARDS -->
+    <div class="cards">
+        <div class="card">
+            <h3>Total User</h3>
+            <p>1,250</p>
+        </div>
+
+        <div class="card">
+            <h3>Total Produk</h3>
+            <p>320</p>
+        </div>
+
+        <div class="card">
+            <h3>Pendapatan</h3>
+            <p>Rp 12 Jt</p>
+        </div>
+
+        <div class="card">
+            <h3>Pesanan</h3>
+            <p>540</p>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="table-container">
+        <h3>Data User</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Budi</td>
+                    <td>budi@gmail.com</td>
+                    <td>Aktif</td>
+                </tr>
+
+                <tr>
+                    <td>Siti</td>
+                    <td>siti@gmail.com</td>
+                    <td>Aktif</td>
+                </tr>
+
+                <tr>
+                    <td>Andi</td>
+                    <td>andi@gmail.com</td>
+                    <td>Nonaktif</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
 </div>
 
-<script src="{{asset('js/app.css')}}"></script>
 </body>
 </html>

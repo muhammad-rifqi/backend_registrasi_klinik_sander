@@ -32,7 +32,7 @@
         <h2>Dashboard</h2>
 
         <div class="profile">
-            Admin
+            {{$cookieValue}}
         </div>
     </div>
 

@@ -23,53 +23,25 @@ class LoginController extends Controller
      */
     public function loginaction(Request $request)
     {
-        // $credentials = $request->only('email', 'password');
-        // if (Auth::attempt($credentials)) {
-        //     $request->session()->regenerate();
-        //     return response()->json([
-        //         'success' => true,
-        //         'user' => Auth::user()
-        //     ]);
-        // }
-
-        $email = $request->email;
-        $password = $request->password;
-
-        if ($email === 'admin.mcu@dayamedika.com' && $password === '123456') {
-            // $request->session()->regenerate();
-            // cookie('email', $email, 60);
-            // return response()->json([
-            //     'success' => true,
-            //     'message' => 'Login berhasil',
-            //     'user' => [
-            //         'email' => $email,
-            //         'password' => Hash::make($request->password)
-            //     ]
-            // ])->cookie('email', $email, 60);
-
-                $user = new GenericUser([
-                    'id' => 1,
-                    'name' => 'Admin',
-                    'email' => 'admin.mcu@dayamedika.com',
-                ]);
-
-                Auth::login($user);
-
-                return response()->json([
-                    'success' => true,
-                    'message' => 'Login berhasil',
-                    'user' => [
-                        'id' => $user->id,
-                        'name' => $user->name,
-                        'email' => $user->email,
-                    ]
-                ]);
-            
+        $credentials = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user();
+            return response()->json([
+                'status' => true,
+                'message' => 'Login berhasil',
+                'data' => [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                ]
+            ])->cookie('email', $email, 10);
         }
 
-
         return response()->json([
-            'success' => false,
+            'status' => false,
             'message' => 'Email atau password salah'
         ], 401);
     }

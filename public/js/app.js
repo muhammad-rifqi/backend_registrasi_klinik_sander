@@ -19,6 +19,7 @@ function login(event) {
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        window.location.href=`/dashboard`;
     })
     .catch(err => {
         console.error(err);

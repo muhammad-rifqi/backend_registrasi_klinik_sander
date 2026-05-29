@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 
 class DashboardController extends Controller
 {
@@ -11,9 +12,14 @@ class DashboardController extends Controller
      */
     
 
-    public function index()
+    public function index(Request $request)
     {
-        return view('dashboard');
+        $cookieValue = $request->cookie('email');
+        if(empty($cookieValue)){
+            return redirect('/login');
+        }else{
+            return view('dashboard', compact('cookieValue'));
+        }
     }
 
     /**

@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -19,15 +20,49 @@ class LoginController extends Controller
      */
     public function loginaction(Request $request)
     {
-        //
+         $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+
+            $request->session()->regenerate();
+
+            return response()->json([
+                'success' => true,
+                'user' => Auth::user()
+            ]);
+        }
+
+        return response()->json([
+            'success' => false,
+            'message' => 'Email atau password salah'
+        ], 401);
     }
+
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return response()->json([
+            'success' => true
+        ]);
+    }
+
 
     /**
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
     {
-        //
+        User::create([
+            'name' => 'Admin',
+            'email' => 'admin@gmail.com',
+            'password' => Hash::make('123456')
+        ]);
     }
 
     /**

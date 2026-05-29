@@ -4,9 +4,8 @@ function login(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    fetch('/loginaction', {
+    fetch('https://dev.klinikdrsanderb-emcu.com/api/v1/registrationpatients/login', {
         method: 'POST',
-        credentials: 'include',
         headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': csrfToken
@@ -18,7 +17,6 @@ function login(event) {
     })
     .then(res => res.json())
     .then(data => {
-        console.log(data);
         window.location.href=`/dashboard`;
     })
     .catch(err => {

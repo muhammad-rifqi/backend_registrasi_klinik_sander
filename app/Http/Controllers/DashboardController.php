@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 
+
 class DashboardController extends Controller
 {
     /**
@@ -14,11 +15,14 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
-        $cookieValue = $request->cookie('email');
-        if(empty($cookieValue)){
+        $xxx1 = base64_decode(urldecode($_COOKIE['xxx1']));
+        $xxx2 = base64_decode(urldecode($_COOKIE['xxx2']));
+        $xxx3 = base64_decode(urldecode($_COOKIE['xxx3']));
+
+        if(empty($xxx1) || empty($xxx2) || empty($xxx3)){
             return redirect('/login');
         }else{
-            return view('dashboard', compact('cookieValue'));
+            return view('dashboard', compact('xxx1'));
         }
     }
 

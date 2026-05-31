@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Auth\GenericUser;
-
+use Illuminate\Support\Facades\Crypt;
+use Session;
 
 class LoginController extends Controller
 {
@@ -27,23 +28,25 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required'
         ]);
-        if (Auth::attempt($credentials)) {
-            $user = Auth::user();
+
+        if (!Auth::attempt($credentials)) {
             return response()->json([
-                'status' => true,
-                'message' => 'Login berhasil',
-                'data' => [
-                    'id' => $user->id,
-                    'name' => $user->name,
-                    'email' => $user->email,
-                ]
-            ])->cookie('email', $email, 10);
+                'status' => false,
+                'message' => 'Email atau password salah'
+            ], 401);
         }
 
+        $user = Auth::user();
+
+        Session::put('email',$user->email);
+        $token = $user->createToken('api-token')->plainTextToken;
+
         return response()->json([
-            'status' => false,
-            'message' => 'Email atau password salah'
-        ], 401);
+            'status' => true,
+            'message' => 'Login berhasil',
+            'token' => $token,
+            'user' => $user
+        ]);
     }
 
 

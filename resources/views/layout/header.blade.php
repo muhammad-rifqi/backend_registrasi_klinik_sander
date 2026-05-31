@@ -15,9 +15,14 @@
           padding : 10px;
         }
         .awal,
-        .akhir,
-        .btn_export {
+        .akhir {
           padding: 5px;
+        }
+
+        .btn_export{
+          padding: 5px;
+          background-color: #3b71ca;
+          color : #fff;
         }
     </style>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

@@ -3,5 +3,18 @@ function deleteCookie(name, path = '/') {
 }
 
 function logoutAction () {
-    window.location.href = "/logoutaction";
+    swal({
+        title: "Are You Sure ?",
+        text: "to exit this app ??",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+    })
+        .then((willOut) => {
+            if (willOut) {
+                window.location.href = '/logoutaction';
+            } else {
+                console.log('NaN')
+            }
+        });
 }

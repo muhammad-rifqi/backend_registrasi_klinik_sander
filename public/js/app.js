@@ -49,11 +49,3 @@ function login(event) {
             });
     });
 }
-
-// function deleteCookie(name, path = '/') {
-//     document.cookie = `${name}=; path=${path}; max-age=0; SameSite=Lax`;
-// }
-
-function logoutaction() {
-  window.location.href = "/logoutaction";
-}

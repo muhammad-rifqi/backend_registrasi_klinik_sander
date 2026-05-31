@@ -9,7 +9,7 @@
         <h2>Dashboard</h2>
 
         <div class="profile">
-            Halo {{$xxx1}}
+            Hallo {{$xxx1}}
         </div>
     </div>
 

@@ -19,12 +19,12 @@
      
     <form action="/export-patients" method="GET" class="formexport">
         @csrf
-        <label>Dari Tanggal:</label>
+        <label>From:</label>
         <input type="date" name="from" class="awal" required>
 
         <br><br>
 
-        <label>Sampai Tanggal:</label>
+        <label>To:</label>
         <input type="date" name="to" class="akhir" required>
 
         <br><br>
@@ -41,7 +41,7 @@
 
                 <tr>
                     <th>ID</th>
-                    <th>Nama</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Created At</th>
                 </tr>

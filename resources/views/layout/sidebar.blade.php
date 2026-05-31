@@ -7,9 +7,9 @@
 
     <ul class="menu">
         <li class="active"><a href="#">🏠 Dashboard</a></li>
-        <li><a href="#">👥 Users</a></li>
-        <li><a href="#">📊 Analytics</a></li>
-        <li><a href="#">📦 Produk</a></li>
+        <li><a href="#">👥 Patient</a></li>
+        <li><a href="#">📊 Menu 2</a></li>
+        <li><a href="#">📦 Menu 3</a></li>
         <li><a href="#">⚙️ Settings</a></li>
         <li><a href="#" onclick="logoutAction()">🚪 Logout</a></li>
     </ul>

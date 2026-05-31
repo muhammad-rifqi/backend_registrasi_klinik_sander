@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Dashboard</title>
-  <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-</head>
-<body>
-
-<!-- SIDEBAR -->
-<div class="sidebar">
-    <div class="logo">
-        MyAdmin
-    </div>
-
-    <ul class="menu">
-        <li class="active"><a href="#">🏠 Dashboard</a></li>
-        <li><a href="#">👥 Users</a></li>
-        <li><a href="#">📊 Analytics</a></li>
-        <li><a href="#">📦 Produk</a></li>
-        <li><a href="#">⚙️ Settings</a></li>
-        <li><a href="#">🚪 Logout</a></li>
-    </ul>
-</div>
+@include('layout.header')
+@include('layout.sidebar')
 
 <!-- MAIN -->
 <div class="main">
@@ -58,43 +35,6 @@
             <p>540</p>
         </div>
     </div>
-
-    <!-- TABLE -->
-    <div class="table-container">
-        <h3>Data User</h3>
-
-        <table>
-            <thead>
-                <tr>
-                    <th>Nama</th>
-                    <th>Email</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-
-            <tbody>
-                <tr>
-                    <td>Budi</td>
-                    <td>budi@gmail.com</td>
-                    <td>Aktif</td>
-                </tr>
-
-                <tr>
-                    <td>Siti</td>
-                    <td>siti@gmail.com</td>
-                    <td>Aktif</td>
-                </tr>
-
-                <tr>
-                    <td>Andi</td>
-                    <td>andi@gmail.com</td>
-                    <td>Nonaktif</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
 </div>
 
-</body>
-</html>
+@include('layout.footer')

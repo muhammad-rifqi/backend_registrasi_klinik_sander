@@ -32,23 +32,24 @@
 <body>
 
     <h2>Users DataTable Server Side</h2>
+    <div class="table-container">
+        <table id="users-table"
+            class="display"
+            style="width:100%">
 
-    <table id="users-table"
-           class="display"
-           style="width:100%">
+            <thead>
 
-        <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Created At</th>
+                </tr>
 
-            <tr>
-                <th>ID</th>
-                <th>Nama</th>
-                <th>Email</th>
-                <th>Created At</th>
-            </tr>
+            </thead>
 
-        </thead>
-
-    </table>
+        </table>
+    </div>
 
     <!-- JQUERY -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>

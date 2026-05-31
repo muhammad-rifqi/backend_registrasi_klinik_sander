@@ -13,3 +13,4 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/loginaction', [LoginController::class, 'loginaction'])->name('loginaction');
 // Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/logoutaction', [LoginController::class, 'logoutaction'])->name('logoutaction');

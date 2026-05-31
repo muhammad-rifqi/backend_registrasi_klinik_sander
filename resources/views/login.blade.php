@@ -6,6 +6,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Backend Registrasi</title>
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 
@@ -18,7 +19,7 @@
       <input type="email" id="email" placeholder="Email" required>
       <input type="password" id="password" placeholder="Password" required>
 
-      <button type="submit">Login</button>
+      <button type="submit" id="btn_loading">Login</button>
     </form>
 
     <small id="error"></small>

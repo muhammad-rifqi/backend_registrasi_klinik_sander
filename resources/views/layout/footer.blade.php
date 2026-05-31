@@ -51,6 +51,5 @@
                 return parts.pop().split(';').shift();
             }
         }
-
     </script>
 </html>

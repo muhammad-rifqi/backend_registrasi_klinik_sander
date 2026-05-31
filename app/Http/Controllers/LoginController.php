@@ -33,7 +33,7 @@ class LoginController extends Controller
             return response()->json([
                 'status' => false,
                 'message' => 'Email atau password salah'
-            ], 401);
+            ], 201);
         }
 
         $user = Auth::user();

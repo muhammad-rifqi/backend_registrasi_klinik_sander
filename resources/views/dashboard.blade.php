@@ -16,23 +16,23 @@
     <!-- CARDS -->
     <div class="cards">
         <div class="card">
-            <h3>Total User</h3>
-            <p>1,250</p>
+            <h3>Sample</h3>
+            <p>0</p>
         </div>
 
         <div class="card">
-            <h3>Total Produk</h3>
-            <p>320</p>
+            <h3>Sample</h3>
+            <p>0</p>
         </div>
 
         <div class="card">
-            <h3>Pendapatan</h3>
-            <p>Rp 12 Jt</p>
+            <h3>Sample</h3>
+            <p>0</p>
         </div>
 
         <div class="card">
-            <h3>Pesanan</h3>
-            <p>540</p>
+            <h3>Sample</h3>
+            <p>0</p>
         </div>
     </div>
 </div>

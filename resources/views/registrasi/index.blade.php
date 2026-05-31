@@ -1,37 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+@include('layout.header')
 
-<head>
+@include('layout.sidebar')
 
-    <meta charset="UTF-8">
+<!-- MAIN -->
+<div class="main">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <!-- TOPBAR -->
+    <div class="topbar">
+        <h2>Dashboard</h2>
 
-    <title>Laravel Datatables Manual Server Side</title>
+        <div class="profile">
+            Halo {{$xxx1}}
+        </div>
+    </div>
 
-    <!-- DATATABLES CSS -->
-    <link rel="stylesheet"
-          href="https://cdn.datatables.net/1.13.8/css/jquery.dataTables.min.css">
+    
+    <h3>Data Patient </h3>
+     
+    <form action="/export-patients" method="GET" class="formexport">
+        @csrf
+        <label>Dari Tanggal:</label>
+        <input type="date" name="from" class="awal" required>
 
-    <style>
+        <br><br>
 
-        body{
-            font-family: Arial;
-            padding: 30px;
-        }
+        <label>Sampai Tanggal:</label>
+        <input type="date" name="to" class="akhir" required>
 
-        h2{
-            margin-bottom: 20px;
-        }
+        <br><br>
 
-    </style>
+        <button type="submit" class="btn_export">Export Excel</button>
+    </form>
 
-</head>
-
-<body>
-
-    <h2>Users DataTable Server Side</h2>
     <div class="table-container">
         <table id="users-table"
             class="display"
@@ -51,68 +51,6 @@
         </table>
     </div>
 
-    <!-- JQUERY -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</div>
 
-    <!-- DATATABLES JS -->
-    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
-
-    <script>
-
-        $(document).ready(function () {
-
-            $('#users-table').DataTable({
-
-                processing: true,
-
-                serverSide: true,
-
-                searchDelay: 500,
-
-                ajax: {
-                    url: '/users/data',
-                    type: 'GET'
-                },
-
-                columns: [
-
-                    {
-                        data: 'id',
-                        name: 'id'
-                    },
-
-                    {
-                        data: 'name',
-                        name: 'name'
-                    },
-
-                    {
-                        data: 'email',
-                        name: 'email'
-                    },
-
-                    {
-                        data: 'created_at',
-                        name: 'created_at'
-                    }
-
-                ],
-
-                pageLength: 10,
-
-                lengthMenu: [
-                    [10, 25, 50, 100],
-                    [10, 25, 50, 100]
-                ],
-
-                order: [[0, 'desc']]
-
-            });
-
-        });
-
-    </script>
-
-</body>
-
-</html>
+@include('layout.footer')

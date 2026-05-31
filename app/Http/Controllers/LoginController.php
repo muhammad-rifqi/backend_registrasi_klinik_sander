@@ -50,14 +50,15 @@ class LoginController extends Controller
     }
 
 
-    public function logout(Request $request)
+    public function logoutaction(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return response()->json([
-            'success' => true
-        ]);
+        setcookie("xxx1", "", time() - 3600, "/");
+        setcookie("xxx2", "", time() - 3600, "/");
+        setcookie("xxx3", "", time() - 3600, "/");
+        return redirect('/login');
     }
 
 

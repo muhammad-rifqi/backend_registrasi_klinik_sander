@@ -37,13 +37,10 @@ function login(event) {
     });
 }
 
-function logout() {
-  localStorage.removeItem("login");
-  window.location.href = "/login";
-}
+// function deleteCookie(name, path = '/') {
+//     document.cookie = `${name}=; path=${path}; max-age=0; SameSite=Lax`;
+// }
 
-if (window.location.pathname.includes("dashboard")) {
-  if (!localStorage.getItem("login")) {
-    window.location.href = "/login";
-  }
+function logoutaction() {
+  window.location.href = "/logoutaction";
 }

@@ -11,6 +11,6 @@
         <li><a href="#">📊 Analytics</a></li>
         <li><a href="#">📦 Produk</a></li>
         <li><a href="#">⚙️ Settings</a></li>
-        <li><a href="#">🚪 Logout</a></li>
+        <li><a href="#" onclick="logoutAction()">🚪 Logout</a></li>
     </ul>
 </div>

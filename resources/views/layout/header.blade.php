@@ -23,6 +23,7 @@
           padding: 5px;
           background-color: #3b71ca;
           color : #fff;
+          border: 1px solid #fff;
         }
     </style>
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

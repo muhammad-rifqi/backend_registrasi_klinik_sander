@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use DB;
 
 class SettingController extends Controller
 {
@@ -35,7 +36,18 @@ class SettingController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->password == $request->confirm){
+            $xxx2 = base64_decode(urldecode($_COOKIE['xxx2']));
+            DB::table('users')
+            ->where('users_id', $xxx2)
+            ->update([
+                'password' => Hash::make($request->password)
+            ]);
+            return back()->with('success', 'Password berhasil diubah');
+        }else{
+             return back()->with('error', 'Password gagal diubah');
+        }
+            
     }
 
     /**

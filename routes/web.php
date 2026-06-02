@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\HistoryController;
 
 Route::get('/', function () {
     // return view('welcome');
@@ -20,3 +21,4 @@ Route::get('/logoutaction', [LoginController::class, 'logoutaction'])->name('log
 Route::get('/export-patients', [PatientController::class, 'export']);
 Route::get('/setting', [SettingController::class, 'index'])->name('setting');
 Route::post('/updateaccount', [SettingController::class, 'store'])->name('setting_store');
+Route::get('/history', [HistoryController::class, 'index'])->name('history');

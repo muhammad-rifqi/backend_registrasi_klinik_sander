@@ -42,8 +42,8 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
+                    <th>NIK</th>
                     <th>Email</th>
-                    <th>Created At</th>
                 </tr>
 
             </thead>

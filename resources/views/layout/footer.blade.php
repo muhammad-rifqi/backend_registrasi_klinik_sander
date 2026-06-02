@@ -10,7 +10,7 @@
                 serverSide: true,
                 searchDelay: 500,
                 ajax: {
-                    url: '/api/patients',
+                    url: 'https://dev.klinikdrsanderb-emcu.com/api/v1/patients/patients_registration',
                     type: 'GET',
                         headers: {
                                 'Authorization': 'Bearer ' + decodeURIComponent(atob(getCookie('xxx3')))

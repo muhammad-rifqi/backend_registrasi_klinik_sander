@@ -8,6 +8,7 @@
             $('#users-table').DataTable({
                 processing: true,
                 serverSide: true,
+                stateSave: true,
                 searchDelay: 500,
                 ajax: {
                     url: 'https://dev.klinikdrsanderb-emcu.com/api/v1/patients/patients_registration',

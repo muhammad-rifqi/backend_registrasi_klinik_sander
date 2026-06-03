@@ -17,7 +17,7 @@
     
     <h3>Data Patient </h3>
      
-    <form action="/export-patients" method="GET" class="formexport">
+    <!-- <form action="/export-patients" method="GET" class="formexport">
         @csrf
         <label>From:</label>
         <input type="date" name="from" class="awal" required>
@@ -30,7 +30,7 @@
         <br><br>
 
         <button type="submit" class="btn_export">Export Excel</button>
-    </form>
+    </form> -->
 
     <div class="table-container">
         <table id="users-table"

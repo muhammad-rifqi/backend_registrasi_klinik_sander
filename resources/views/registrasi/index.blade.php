@@ -44,6 +44,7 @@
                     <th>Name</th>
                     <th>NIK</th>
                     <th>Email</th>
+                    <th>Action</th>
                 </tr>
 
             </thead>

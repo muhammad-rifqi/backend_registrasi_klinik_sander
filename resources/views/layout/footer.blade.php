@@ -33,6 +33,19 @@
                     {
                         data: 'email',
                         name: 'email'
+                    },
+                    { 
+                        data: null,
+                        render: function(data, type, row) {
+                            return `
+                                <button data-id="${row.id}">
+                                    Edit
+                                </button>
+                                <button data-id="${row.id}">
+                                    Hapus
+                                </button>
+                            `;
+                        },
                     }
                 ],
                 pageLength: 10,

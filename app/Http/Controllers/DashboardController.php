@@ -15,6 +15,10 @@ class DashboardController extends Controller
 
     public function index(Request $request)
     {
+        if (!isset($_COOKIE['xxx1']) || !isset($_COOKIE['xxx2']) || !isset($_COOKIE['xxx3'])) {
+            return redirect('/login');
+        }
+        
         $xxx1 = base64_decode(urldecode($_COOKIE['xxx1']));
         $xxx2 = base64_decode(urldecode($_COOKIE['xxx2']));
         $xxx3 = base64_decode(urldecode($_COOKIE['xxx3']));

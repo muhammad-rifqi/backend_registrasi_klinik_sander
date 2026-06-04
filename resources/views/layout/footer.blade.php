@@ -34,19 +34,19 @@
                         data: 'email',
                         name: 'email'
                     },
-                    { 
-                        data: null,
-                        render: function(data, type, row) {
-                            return `
-                                <button data-id="${row.id}">
-                                    Edit
-                                </button>
-                                <button data-id="${row.id}">
-                                    Hapus
-                                </button>
-                            `;
-                        },
-                    }
+                    // { 
+                    //     data: null,
+                    //     render: function(data, type, row) {
+                    //         return `
+                    //             <button data-id="${row.id}" class="btn_export">
+                    //                 Edit
+                    //             </button>
+                    //             <button data-id="${row.id}" class="btn_export">
+                    //                 Delete
+                    //             </button>
+                    //         `;
+                    //     },
+                    // }
                 ],
                 pageLength: 10,
                 lengthMenu: [

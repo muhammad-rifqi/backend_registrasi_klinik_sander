@@ -134,11 +134,27 @@ class PatientController extends Controller
         ]);
     }
 
+    // public function export(Request $request)
+    // {
+    //     $from = $request->from; 
+    //     $to   = $request->to;   
+    //     $date = date('YmdHis');
+    //     return Excel::download(new UsersExport($from, $to), $date.'.xlsx');
+    // }
+
     public function export(Request $request)
     {
-        $from = $request->from; 
-        $to   = $request->to;   
-        $date = date('YmdHis');
-        return Excel::download(new UsersExport($from, $to), $date.'.xlsx');
+        $request->validate([
+            'from' => 'required|date',
+            'to'   => 'required|date',
+        ]);
+
+        return Excel::download(
+            new UsersExport(
+                $request->from,
+                $request->to
+            ),
+            'users_' . now()->format('YmdHis') . '.xlsx'
+        );
     }
 }

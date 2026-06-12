@@ -14,9 +14,9 @@
             <a href="/patient">👥 Patient Reg</a>
         </li>
 
-        <!-- <li class="{{ request()->is('history') ? 'active' : '' }}">
+        <li class="{{ request()->is('history') ? 'active' : '' }}">
             <a href="/history">👥 History Patient</a>
-        </li> -->
+        </li>
 
         <li class="{{ request()->is('setting') ? 'active' : '' }}">
             <a href="/setting">⚙️ Account Settings</a>

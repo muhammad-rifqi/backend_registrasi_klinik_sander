@@ -57,6 +57,46 @@
             });
         });
 
+         $(document).ready(function () {
+            $('#history-table').DataTable({
+                processing: true,
+                serverSide: true,
+                stateSave: true,
+                searchDelay: 500,
+                ajax: {
+                    url: 'https://dev.klinikdrsanderb-emcu.com/api/v1/patients/allhistory',
+                    type: 'GET',
+                        headers: {
+                                'Authorization': 'Bearer ' + decodeURIComponent(atob(getCookie('xxx3')))
+                            }
+                },
+                columns: [
+                    {
+                        data: 'id',
+                        name: 'id'
+                    },
+                    {
+                        data: 'registration_number',
+                        name: 'registration_number'
+                    },
+                    {
+                        data: 'color_blind',
+                        name: 'color_blind'
+                    },
+                    {
+                        data: 'created_at',
+                        name: 'created_at'
+                    },
+                ],
+                pageLength: 10,
+                lengthMenu: [
+                    [10, 25, 50, 100],
+                    [10, 25, 50, 100]
+                ],
+                order: [[0, 'desc']]
+            });
+        });
+
         function getCookie(name) {
             const value = `; ${document.cookie}`;
             const parts = value.split(`; ${name}=`);
